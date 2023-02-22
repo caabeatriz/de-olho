@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      background-color: black;
+    }
+    
+    .olho{
+      width: 240px;
+  height: 120px;
+  background: #fff;
+  display: inline-block;
+  margin: 40px;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+    }
+    .iris{
+      width: 40px;
+  height: 40px;
+  background: #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 50%;
+  border: 15px solid #333;
+    
+    }
+    .rosto{
+      position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  text-align: center;
+    }
+  </style>
+  <title>Document</title>
+</head>
+<body>
+  <h1></h1>
+  <!-- <img src="olhos.jpeg" id="olhos" alt="" srcset=""> -->
+  <div class="rosto">
+    <div class="olho">
+      <div class="iris"></div>
+  
+    </div>
+    <div class="olho">
+      <div class="iris"></div>
+  
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('mousemove', function(event){
+      const imgOlhos = document.getElementsByClassName('iris');
+      let positionX = event.clientX * 100 / window.innerWidth + "%";
+      let positionY = event.clientY * 100 / window.innerHeight + "%";
+
+      for (let index = 0; index <  2; index++) {
+        imgOlhos[index].style.left  = positionX
+        imgOlhos[index].style.top  = positionY
+      }
+    })
+  </script>
+</body>
+</html>
